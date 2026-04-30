@@ -1,0 +1,38 @@
+{% load static %}
+<div class="trailers">
+    <div class="container">
+        <div class="row ipad-width">
+            <div class="col-md-12">
+                <div class="title-hd">
+                    <h2>in theater</h2>
+                    <a href="#" class="viewall">View all <i class="ion-ios-arrow-right"></i></a>
+                </div>
+                <div class="videos">
+                    
+                    <div class="slider-for-2 video-ft">
+                        {% for trailer in trailer_data %}
+                        <div>
+                            <iframe class="item-video" referrerpolicy="strict-origin-when-cross-origin" src="{{ trailer.trailer_url }}" data-src="{{ trailer.trailer_url }}"></iframe>
+                        </div>
+                        {% endfor %}
+                    </div>
+                    
+                    <div class="slider-nav-2 thumb-ft">
+                        {% for item in trailer_item_data %}
+                        <div class="item">
+                            <div class="trailer-img">
+                                <img src="{% static item.img_src %}" alt="{{ item.img_alt }}" width="{{ item.img_width }}" height="{{ item.img_height }}">
+                            </div>
+                            <div class="trailer-infor">
+                                <h4 class="desc">{{ item.description }}</h4>
+                                <p>{{ item.duration }}</p>
+                            </div>
+                        </div>
+                        {% endfor %}
+                    </div>
+                    
+                </div>   
+            </div>
+        </div>
+    </div>
+</div>
