@@ -1,0 +1,10 @@
+{% load static %}
+<section class="db-section">
+    <h2>Latest News</h2>
+    {% for item in news_items %}
+    <article class="side-card" style="display:flex;gap:20px;align-items:flex-start;">
+        <img src="{% static 'movies/' %}{{ item.img_src }}" alt="{{ item.img_alt }}" width="{{ item.img_width }}" height="{{ item.img_height }}" style="max-width:170px;height:auto;">
+        <div><h3>{{ item.title }}</h3><small>{{ item.time }} | {{ item.section }}</small><p>{{ item.content }}</p></div>
+    </article>
+    {% empty %}<p>No news added yet.</p>{% endfor %}
+</section>

@@ -1,0 +1,13 @@
+{% load static %}
+
+<section class="db-section">
+    <h2>Featured Sliders</h2>
+    <div class="hero-grid">
+    {% for slide in sliders %}
+        <div class="slider-card">
+            <a href="{{ slide.anchor_url }}"><img src="{% static 'movies/' %}{{ slide.image_src }}" alt="{{ slide.movie_title }}" width="{{ slide.image_width }}" height="{{ slide.image_height }}"></a>
+            <p><span class="movie-title">{{ slide.movie_title }}</span><br><small>{{ slide.movie_genre }}</small> <span class="rating">★ {{ slide.lower_rating }}{{ slide.upper_rating }}</span></p>
+        </div>
+    {% empty %}<p>No slider records yet. Add them in the admin panel.</p>{% endfor %}
+    </div>
+</section>

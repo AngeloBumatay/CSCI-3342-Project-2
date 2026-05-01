@@ -1,0 +1,15 @@
+{% load static %}
+<section class="db-section">
+    <h2>Trailers</h2>
+    {% for trailer in trailers %}
+        <div class="side-card"><iframe width="100%" height="360" src="{{ trailer.trailer_url }}" title="Trailer" allowfullscreen></iframe></div>
+    {% empty %}<p>No main trailer added yet.</p>{% endfor %}
+    <div class="movie-grid">
+    {% for item in trailer_items %}
+        <div class="movie-card">
+            <img src="{% static 'movies/' %}{{ item.img_src }}" alt="{{ item.img_alt }}" width="{{ item.img_width }}" height="{{ item.img_height }}">
+            <p class="movie-title">{{ item.description }}</p><small>{{ item.duration }}</small>
+        </div>
+    {% endfor %}
+    </div>
+</section>

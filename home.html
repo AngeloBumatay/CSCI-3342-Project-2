@@ -1,0 +1,53 @@
+{% extends 'movies/base.html' %}
+{% load static %}
+{% block content %}
+<div class="wrap">
+    {% if messages %}{% for message in messages %}<div class="message">{{ message }}</div>{% endfor %}{% endif %}
+    {% include 'movies/slider.html' %}
+    <div class="two-col db-section">
+        <main>
+            {% include 'movies/movielist.html' %}
+            {% include 'movies/trailers.html' %}
+            {% include 'movies/news.html' %}
+        </main>
+        <aside>
+            <div class="side-card">
+                <h3>Advertisements</h3>
+                {% for ad in ads %}
+                    <p><strong>{{ ad.section }}</strong></p>
+                    <img src="{% static 'movies/' %}{{ ad.img_src }}" alt="Advertisement" width="{{ ad.img_width }}" height="{{ ad.img_height }}" style="max-width:100%;height:auto;">
+                {% empty %}<p>No ads added yet.</p>{% endfor %}
+            </div>
+            <div class="side-card">
+                <h3>Spotlight Celebrities</h3>
+                {% for celeb in celebrities %}
+                <div style="display:flex;gap:12px;margin-bottom:14px;align-items:center;">
+                    <img src="{% static 'movies/' %}{{ celeb.celebrity_url }}" alt="{{ celeb.celebrity_name }}" width="{{ celeb.img_width }}" height="{{ celeb.img_height }}">
+                    <div><div class="movie-title">{{ celeb.celebrity_name }}</div><small>{{ celeb.celebrity_type }}</small></div>
+                </div>
+                {% empty %}<p>No celebrities added yet.</p>{% endfor %}
+            </div>
+            <div class="side-card">
+                <h3>Tweet To Us</h3>
+                {% for tweet in tweets %}<p>{{ tweet.content }}</p>{% empty %}<p>No tweets added yet.</p>{% endfor %}
+            </div>
+        </aside>
+    </div>
+</div>
+<footer style="background:#06121f;padding:35px 0;margin-top:20px;">
+    <div class="wrap two-col">
+        <div>
+            <img src="{% static 'movies/images/logo1.png' %}" alt="logo">
+            <p>Resources | Legal | Account</p>
+            <p>{% for link in social_links %}<a href="{{ link.url }}" style="margin-right:12px;">{{ link.name }}</a>{% endfor %}</p>
+        </div>
+        <form class="footer-form" method="post">
+            {% csrf_token %}
+            <h3>Newsletter</h3>
+            <p>Subscribe to our newsletter system now to get latest news from us.</p>
+            <input type="email" name="email" placeholder="Enter your email" required>
+            <br><button type="submit">Subscribe Now</button>
+        </form>
+    </div>
+</footer>
+{% endblock %}

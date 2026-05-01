@@ -1,0 +1,25 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Blockbuster Movie Database</title>
+    <link rel="stylesheet" href="{% static 'movies/css/plugins.css' %}">
+    <link rel="stylesheet" href="{% static 'movies/css/style.css' %}">
+    <style>
+        .project-container{background:#020d18;color:#abb7c4;min-height:100vh}.db-section{padding:35px 0}.movie-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:22px}.movie-card img,.slider-card img{width:100%;height:auto}.movie-title{color:#fff;font-weight:700;text-transform:uppercase}.rating{color:#f5b50a}.side-card{background:#071829;padding:20px;margin-bottom:25px}.hero-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:22px}.footer-form input{background:#101f2f;border:1px solid #405266;color:white;padding:10px;width:100%;max-width:300px}.footer-form button{background:#dd003f;color:white;border:0;padding:10px 18px;margin-top:8px}.message{background:#123;color:#fff;padding:12px;margin:10px 0}.topbar{padding:25px 0}.wrap{width:min(1100px,92%);margin:auto}.two-col{display:grid;grid-template-columns:2fr 1fr;gap:30px}@media(max-width:800px){.two-col{grid-template-columns:1fr}}
+    </style>
+</head>
+<body class="project-container">
+    <div class="wrap topbar">
+        <a href="{% url 'home' %}"><img src="{% static 'movies/images/logo1.png' %}" alt="logo" width="119" height="58"></a>
+        <div style="float:right"><a href="/admin/">Login / Admin</a></div>
+    </div>
+    {% block content %}{% endblock %}
+    <script src="{% static 'movies/js/jquery.js' %}"></script>
+    <script src="{% static 'movies/js/plugins.js' %}"></script>
+    <script src="{% static 'movies/js/plugins2.js' %}"></script>
+    <script src="{% static 'movies/js/custom.js' %}"></script>
+</body>
+</html>

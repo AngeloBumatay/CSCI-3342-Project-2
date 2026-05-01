@@ -1,0 +1,21 @@
+{% load static %}
+<section class="db-section">
+    <h2>In Theater</h2>
+    <div class="movie-grid">
+    {% for movie in movies_theater %}
+        <div class="movie-card">
+            <a href="{{ movie.anchor_url }}"><img src="{% static 'movies/' %}{{ movie.img_src }}" alt="{{ movie.movie_title }}" width="{{ movie.img_width }}" height="{{ movie.img_height }}"></a>
+            <p><span class="movie-title">{{ movie.movie_title }}</span><br><small>{{ movie.movie_genre }} / {{ movie.type }}</small><br><span class="rating">★ {{ movie.lower_rating }}{{ movie.upper_rating }}</span></p>
+        </div>
+    {% empty %}<p>No theater movies added yet.</p>{% endfor %}
+    </div>
+    <h2 style="margin-top:40px;">On TV</h2>
+    <div class="movie-grid">
+    {% for movie in movies_tv %}
+        <div class="movie-card">
+            <a href="{{ movie.anchor_url }}"><img src="{% static 'movies/' %}{{ movie.img_src }}" alt="{{ movie.movie_title }}" width="{{ movie.img_width }}" height="{{ movie.img_height }}"></a>
+            <p><span class="movie-title">{{ movie.movie_title }}</span><br><small>{{ movie.movie_genre }} / {{ movie.type }}</small><br><span class="rating">★ {{ movie.lower_rating }}{{ movie.upper_rating }}</span></p>
+        </div>
+    {% empty %}<p>No TV movies added yet.</p>{% endfor %}
+    </div>
+</section>
