@@ -1,3 +1,4 @@
 * Need to fix In Theater and On TV 
 * Need to finish moviesingle.html
 * Need to fix ad
+* Need to finish newsletter sign up
