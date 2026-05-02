@@ -1,4 +1,5 @@
-* Need to fix In Theater and On TV 
+* Need to fix In Theater and On TV section
 * Need to finish moviesingle.html
 * Need to fix ad
-* Need to finish newsletter sign up
+* Latest news image is shrunken down
+* Hyper links at the top need to be finished

@@ -269,10 +269,13 @@
 			<div class="flex-child-ft item5">
 				<h4>Newsletter</h4>
 				<p>Subscribe to our newsletter system now <br> to get latest news from us.</p>
-				<form action="#">
-					<input type="text" placeholder="Enter your email...">
+				<form action="/" method="POST">
+					{% csrf_token %}
+					<input type="email"  name="email" placeholder="Enter your email..." required>
+					<button type="submit" class="btn" style="background: none; border: none; padding: 0; color: #dd003f; font-family: 'Dosis', sans-serif; font-size: 14px; font-weight: bold; text-transform: uppercase; margin-top: 20px;">
+						Subscribe now <i class="ion-ios-arrow-forward"></i>
+					</button>
 				</form>
-				<a href="#" class="btn">Subscribe now <i class="ion-ios-arrow-forward"></i></a>
 			</div>
 		</div>
 	</div>
