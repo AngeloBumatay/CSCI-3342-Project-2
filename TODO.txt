@@ -1,5 +1,15 @@
-* Need to fix In Theater and On TV section
-* Need to finish moviesingle.html
-* Need to fix ad
-* Latest news image is shrunken down
-* Hyper links at the top need to be finished
+10 – Project setup 
+* Initial project and app setup compelte
+
+15 – Identification and implementation of dynamic sections (e.g social media links, movie listing, news, tweets, etc…)
+* Dynamic sections completed with all sections able to be added upon using admin panel
+
+20 – Implementation of data models and tables
+* Database setup complete, tables can be modified and passed to the frontend
+
+10 – Implementation of template inheritance
+* base.html acts as master template with index 
+15 – Implementation of business rules in the controller (view.py)
+15 – Support for static content
+5 – Model registration for access in admin console
+10 – Functional newsletter form
