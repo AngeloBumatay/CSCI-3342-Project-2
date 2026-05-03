@@ -1,3 +1,6 @@
+Project Complete!
+Criteria below:
+
 10 – Project setup 
 * Initial project and app setup compelte
 
@@ -8,8 +11,16 @@
 * Database setup complete, tables can be modified and passed to the frontend
 
 10 – Implementation of template inheritance
-* base.html acts as master template with index 
+* base.html acts as master template
+
 15 – Implementation of business rules in the controller (view.py)
+* Website can detect POST requests and can route data correctly
+
 15 – Support for static content
+* All templates load static correctly and images/css/js are now static
+
 5 – Model registration for access in admin console
+* Admin console can be accessed and databases can be altered as well
+
 10 – Functional newsletter form
+* Users can input their email and will be saved in the database
