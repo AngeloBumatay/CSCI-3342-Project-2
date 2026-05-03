@@ -45,3 +45,6 @@ def index(request):
 
 def movie_single(request, movie_id):
     return render(request, 'moviesingle.html')
+
+def tv_single(request, tv_id):
+    return render(request, 'moviesingle.html')

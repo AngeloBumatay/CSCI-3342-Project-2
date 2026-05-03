@@ -84,7 +84,7 @@
 					            				<img src="{% static tv.img_src %}" alt="" width="{{ tv.img_width }}" height="{{ tv.img_height }}">
 					            			</div>
 					            			<div class="hvr-inner">
-					            				<a href="{{ tv.anchor_url }}"> Read more <i class="ion-android-arrow-dropright"></i> </a>
+					            				<a href="{% url 'tv_single' tv.id %}">Read more</a>
 					            			</div>
 					            			<div class="title-in">
 					            				<h6><a href="#">{{ tv.movie_title }}</a></h6>
@@ -107,7 +107,7 @@
 					            				<img src="{% static tv.img_src %}" alt="" width="{{ tv.img_width }}" height="{{ tv.img_height }}">
 					            			</div>
 					            			<div class="hvr-inner">
-					            				<a href="{{ tv.anchor_url }}"> Read more <i class="ion-android-arrow-dropright"></i> </a>
+					            				<a href="{% url 'tv_single' tv.id %}">Read more</a>
 					            			</div>
 					            			<div class="title-in">
 					            				<h6><a href="#">{{ tv.movie_title }}</a></h6>
